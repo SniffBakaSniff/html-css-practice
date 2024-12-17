@@ -1,0 +1,204 @@
+/* Color Palette Variables */
+:root {
+    --color-bg: rgba(0, 0, 0, 0.35);
+    --color-input-bg: rgba(255, 255, 255, 0.2);
+    --color-input-focus: rgba(255, 255, 255, 0.4);
+    --color-input-border: rgba(0, 0, 0, 0.178);
+    --color-text: #ffffff;
+    --color-dark-text: #000000;
+    --color-placeholder: #cccccc;
+    --color-title: #ffffff;
+    --color-hover: #ffffff;
+}
+
+/* Global Settings */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: var(--color-text);
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 130%;
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+/* Container */
+.container {
+    background-color: var(--color-bg);
+    backdrop-filter: blur(8px);
+    border: solid 3px var(--color-input-border);
+    border-radius: 10px;
+    color: var(--color-text);
+    width: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container h5 {
+    color: var(--color-title);
+}
+
+/* Title */
+.login-title {
+    font-size: 2.5rem;
+    color: var(--color-title);
+    margin-bottom: 1rem;
+}
+
+/* Input Fields */
+.input-box {
+    position: relative;
+    width: 90%;
+    margin-top: 1rem;
+}
+
+.input-box input {
+    width: 80%;
+    padding: 10px 12px 10px 40px; /* Add space for the icon */
+    background: var(--color-input-bg);
+    border: none;
+    border-radius: 5px;
+    color: var(--color-text);
+    outline: none;
+    transition: 250ms;
+}
+
+.input-box input::placeholder {
+    color: var(--color-placeholder);
+}
+
+.input-box input:focus {
+    background: var(--color-input-focus);
+    border: solid 1px var(--color-hover);
+    color: var(--color-dark-text);
+}
+
+.input-box i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-placeholder);
+    font-size: 1.1rem;
+}
+
+/* Toggle Password Eye Icon */
+.toggle-password {
+    position: absolute;
+    right: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--color-placeholder);
+    font-size: 1.1rem;
+    transition: 200ms;
+}
+
+.toggle-password:hover {
+    translate: 0 -2px;
+}
+
+/* Remember Me and Forgot Password Section */
+.remember-forgot-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.remember-forgot-box input[type="checkbox"] {
+    /* Custom hollow checkbox */
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--color-placeholder);
+    border-radius: 3px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: border-color 250ms ease;
+}
+
+.remember-forgot-box input[type="checkbox"]:checked {
+    border-color: var(--color-hover);
+    background-color: var(--color-hover);
+}
+
+.remember-forgot-box label,
+.remember-forgot-box a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: 250ms;
+}
+
+.remember-forgot-box a:hover {
+    color: var(--color-dark-text);
+}
+
+.remember-forgot-box a:active {
+    color: var(--color-hover);
+}
+
+/* Buttons */
+.login-button {
+    margin-top: 1.5rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: var(--color-input-bg);
+    color: var(--color-text);
+    font-weight: bold;
+    transition: 250ms ease;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background: var(--color-hover);
+    color: var(--color-dark-text);
+}
+
+.signup-prompt {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--color-text);
+}
+
+.signup-prompt a {
+    color: var(--color-hover);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 250ms ease;
+}
+
+.signup-prompt a:hover {
+    color: var(--color-dark-text);
+}
+
+.signup-prompt a:active {
+    color: var(--color-hover);
+}
+

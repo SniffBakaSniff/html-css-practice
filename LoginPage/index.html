@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Title -->
+        <h1 class="login-title">Login</h1>
+        
+        <!-- Username Input -->
+        <div class="input-box">
+            <i class="fa fa-user"></i>
+            <input type="text" placeholder="Username" required>
+        </div>
+
+        <!-- Password Input -->
+        <div class="input-box">
+            <i class="fa fa-lock"></i>
+            <input type="password" id="password" placeholder="Password" required>
+            <span class="toggle-password">
+                <i class="fa fa-eye" id="eye-icon"></i>
+            </span>
+        </div>
+
+
+        <!-- Remember Me and Forgot Password -->
+        <section class="remember-forgot-box">
+            <label for="remember-me">
+                <input type="checkbox" id="remember-me">
+                Remember Me
+            </label>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+        </section>
+
+        <!-- Login Button -->
+        <button class="login-button">Login</button>
+
+        <!-- Sign Up Link -->
+        <p class="signup-prompt">
+            Don't have an account? 
+            <a href="#">Sign Up</a>
+        </p>
+    </div>
+
+    <script>
+        const passwordInput = document.getElementById('password');
+        const eyeIcon = document.getElementById('eye-icon');
+    
+        eyeIcon.addEventListener('click', () => {
+            // Toggle input type
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        });
+    </script>
+
+</body>
+</html>
